@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PyScript input&output</title>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/collatz.css') }}">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+          <a href="/">
+              <h1>MATH LIBRARY</h1>
+              <p>YONGMOON</p>
+          </a>
+      </div>
+      <div class="header__gnb">
+          <ul>
+              <li><a href="/etc/goldbach">GOLDBACH</a></li>
+              <li><a href="/etc/collatz">COLLATZ</a></li>
+              
+          </ul>
+      </div>
+      <div class="main_content">
+        <h1>콜라츠 추측</h1>
+        <p> 콜라츠 추측은 '함수 T(n)을 n이 짝수일 때는 n/2, 홀수일 때는 3n+1로 정의할 때 어떤 수 n에 대하여 T(n)을 유한 번 반복하면 1이 된다'는 명제이다. </p>
+        <p>1937년에 로타르 콜라츠가 제시한 명제로 정수론 분야의 미해결 문제로 수학계 최대 난제 중 하나이다.</p>
+        <p>컴퓨터를 통한 수많은 계산이 진행되고 있으나(2020년 기준 2^68 까지 성립) 아직까지도 반례는 존재하지 않았다.</p>
+        <p>2019 테렌스 타오의 논문을 통해 거의 모든 자연수에 대해서 이 추측이 성립함이 보여졌다.</p>
+        <img src="{{ url_for('static', filename='image/collatz.PNG') }}">
+        <py-script src="{{ url_for('static', filename='py/collatz.py') }}">
+        </py-script>    
+        <main class = "container">
+          <h2>COLLATZ 계산기</h2>
+          <h3 id = "output_text"></h3>
+          <h4 id = "output_text01"></h4>
+          <div>
+            <input id = "input_text" type="number" placeholder="  자연수를 입력하세요." style="width:600px;height:50px;font-size:20px ">
+            <br>
+            <button id = "add_text" pys-onClick ="function_add_text" style="width:600px;height:50px;font-size:20px" >Click</button>
+          </div> 
+        </main>
+      </div>
+  </body>
+</html>

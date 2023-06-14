@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>MATH LIBRARY</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="/">
+                <h1>MATH LIBRARY</h1>
+                <p>YONGMOON</p>
+            </a>
+        </div>
+        <div class="header__gnb">
+            <ul>
+                <li><a href="#">수(상)</a></li>
+                <li><a href="#">수(하)</a></li>
+                <li><a href="#">수1</a></li>
+                <li><a href="#">수2</a></li>
+                <li><a href="#">중학 도형</a></li>
+                <li><a href="#">기초</a></li>
+                <li><a href="/etc">ETC</a></li>
+            </ul>
+        </div>
+        <div class="main_content">
+            <h1>수학 라이브러리에 오신 것을 환영합니다.</h1>
+        </div>
+    </header>
+    <script>
+        let observer = new IntersectionObserver((e)=>{
+            e.forEach((박스)=>{
+                if (박스.isIntersecting){
+                    박스.target.style.opacity = 1;
+                }
+                else{
+                    박스.target.style.opacity = 0;
+                }
+            })
+        })
+
+        let h1=document.querySelectorAll('h1')
+        observer.observe(h1[1])
+    </script>
+</body>
+</html>
